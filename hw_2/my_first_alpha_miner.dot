@@ -1,0 +1,36 @@
+digraph pn {
+rankdir=LR;
+"e" [shape=box];
+"b" -> "P((('b', 'e'), ('d',)))";
+"b" [shape=box];
+"P((('b', 'e'), ('d',)))" [shape=circle];
+"e" -> "P((('b', 'e'), ('d',)))";
+"e" [shape=box];
+"P((('b', 'e'), ('d',)))" [shape=circle];
+"P((('b', 'e'), ('d',)))" -> "d";
+"d" [shape=box];
+"a" -> "P((('a',), ('c', 'e')))";
+"a" [shape=box];
+"P((('a',), ('c', 'e')))" [shape=circle];
+"P((('a',), ('c', 'e')))" -> "c";
+"c" [shape=box];
+"P((('a',), ('c', 'e')))" -> "e";
+"e" [shape=box];
+"c" -> "P((('c', 'e'), ('d',)))";
+"c" [shape=box];
+"P((('c', 'e'), ('d',)))" [shape=circle];
+"e" -> "P((('c', 'e'), ('d',)))";
+"e" [shape=box];
+"P((('c', 'e'), ('d',)))" [shape=circle];
+"P((('c', 'e'), ('d',)))" -> "d";
+"d" [shape=box];
+"a" -> "P((('a',), ('b', 'e')))";
+"a" [shape=box];
+"P((('a',), ('b', 'e')))" [shape=circle];
+"P((('a',), ('b', 'e')))" -> "b";
+"b" [shape=box];
+"P((('a',), ('b', 'e')))" -> "e";
+"e" [shape=box];
+In -> a
+d -> Out
+}

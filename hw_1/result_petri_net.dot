@@ -1,0 +1,103 @@
+// Petri Net
+digraph {
+	rankdir=LR
+	"Назначена на вторую линию" [label="Назначена на вторую линию" fillcolor=lightblue shape=box style=filled]
+	"ПРОВЕРКА В МИДДЛ" [label="ПРОВЕРКА В МИДДЛ" fillcolor=lightblue shape=box style=filled]
+	"ЧЕРНОВИК" [label="ЧЕРНОВИК" fillcolor=lightblue shape=box style=filled]
+	"КРЕДИТ ОДОБРЕН" [label="КРЕДИТ ОДОБРЕН" fillcolor=lightblue shape=box style=filled]
+	"ОТПРАВЛЕНО В МИДДЛ" [label="ОТПРАВЛЕНО В МИДДЛ" fillcolor=lightblue shape=box style=filled]
+	"ПРИНЯТО В РАБОТУ ЦОПП" [label="ПРИНЯТО В РАБОТУ ЦОПП" fillcolor=lightblue shape=box style=filled]
+	"ОТКАЗ КЛИЕНТА" [label="ОТКАЗ КЛИЕНТА" fillcolor=lightblue shape=box style=filled]
+	"ВОЗВРАТ НА ДОРАБОТКУ" [label="ВОЗВРАТ НА ДОРАБОТКУ" fillcolor=lightblue shape=box style=filled]
+	"КРЕДИТНЫЙ АНАЛИЗ" [label="КРЕДИТНЫЙ АНАЛИЗ" fillcolor=lightblue shape=box style=filled]
+	"ОТКАЗ БАНКА ПО ЗАЕМЩИКУ" [label="ОТКАЗ БАНКА ПО ЗАЕМЩИКУ" fillcolor=lightblue shape=box style=filled]
+	"ВОЗВРАТ КЛИЕНТУ" [label="ВОЗВРАТ КЛИЕНТУ" fillcolor=lightblue shape=box style=filled]
+	"ОТПРАВЛЕНО В БАНК" [label="ОТПРАВЛЕНО В БАНК" fillcolor=lightblue shape=box style=filled]
+	p0 [label="in: КРЕДИТНЫЙ АНАЛИЗ\nout: ОТКАЗ КЛИЕНТА,ОТПРАВЛЕНО В МИДДЛ" fillcolor=lightgreen shape=circle style=filled]
+	p1 [label="in: ВОЗВРАТ КЛИЕНТУ,ВОЗВРАТ НА ДОРАБОТКУ\nout: КРЕДИТ ОДОБРЕН" fillcolor=lightgreen shape=circle style=filled]
+	p2 [label="in: КРЕДИТНЫЙ АНАЛИЗ,ПРОВЕРКА В МИДДЛ\nout: ОТПРАВЛЕНО В БАНК" fillcolor=lightgreen shape=circle style=filled]
+	p3 [label="in: ПРИНЯТО В РАБОТУ ЦОПП\nout: ВОЗВРАТ НА ДОРАБОТКУ,ОТКАЗ БАНКА ПО ЗАЕМЩИКУ" fillcolor=lightgreen shape=circle style=filled]
+	p4 [label="in: ВОЗВРАТ НА ДОРАБОТКУ,ПРОВЕРКА В МИДДЛ\nout: ОТПРАВЛЕНО В БАНК" fillcolor=lightgreen shape=circle style=filled]
+	p5 [label="in: ЧЕРНОВИК\nout: ОТПРАВЛЕНО В МИДДЛ" fillcolor=lightgreen shape=circle style=filled]
+	p6 [label="in: КРЕДИТНЫЙ АНАЛИЗ\nout: ВОЗВРАТ НА ДОРАБОТКУ,ОТПРАВЛЕНО В МИДДЛ" fillcolor=lightgreen shape=circle style=filled]
+	p7 [label="in: КРЕДИТ ОДОБРЕН,ПРИНЯТО В РАБОТУ ЦОПП\nout: ОТПРАВЛЕНО В МИДДЛ" fillcolor=lightgreen shape=circle style=filled]
+	p8 [label="in: ПРИНЯТО В РАБОТУ ЦОПП\nout: ОТКАЗ КЛИЕНТА,ОТПРАВЛЕНО В МИДДЛ" fillcolor=lightgreen shape=circle style=filled]
+	p9 [label="in: КРЕДИТ ОДОБРЕН,ОТКАЗ БАНКА ПО ЗАЕМЩИКУ\nout: ОТПРАВЛЕНО В МИДДЛ" fillcolor=lightgreen shape=circle style=filled]
+	p10 [label="in: ВОЗВРАТ КЛИЕНТУ\nout: КРЕДИТ ОДОБРЕН,ОТКАЗ БАНКА ПО ЗАЕМЩИКУ" fillcolor=lightgreen shape=circle style=filled]
+	p11 [label="in: ПРИНЯТО В РАБОТУ ЦОПП\nout: ОТКАЗ БАНКА ПО ЗАЕМЩИКУ,ОТКАЗ КЛИЕНТА" fillcolor=lightgreen shape=circle style=filled]
+	p12 [label="in: ВОЗВРАТ КЛИЕНТУ\nout: КРЕДИТНЫЙ АНАЛИЗ" fillcolor=lightgreen shape=circle style=filled]
+	p13 [label="in: КРЕДИТНЫЙ АНАЛИЗ\nout: КРЕДИТ ОДОБРЕН,ОТКАЗ БАНКА ПО ЗАЕМЩИКУ,ОТКАЗ КЛИЕНТА" fillcolor=lightgreen shape=circle style=filled]
+	p14 [label="in: ПРИНЯТО В РАБОТУ ЦОПП\nout: КРЕДИТНЫЙ АНАЛИЗ" fillcolor=lightgreen shape=circle style=filled]
+	p15 [label="in: КРЕДИТНЫЙ АНАЛИЗ\nout: ОТКАЗ КЛИЕНТА,ЧЕРНОВИК" fillcolor=lightgreen shape=circle style=filled]
+	p16 [label="in: КРЕДИТНЫЙ АНАЛИЗ\nout: ВОЗВРАТ НА ДОРАБОТКУ,ОТКАЗ БАНКА ПО ЗАЕМЩИКУ" fillcolor=lightgreen shape=circle style=filled]
+	p17 [label="in: КРЕДИТ ОДОБРЕН\nout: Назначена на вторую линию,ОТПРАВЛЕНО В МИДДЛ" fillcolor=lightgreen shape=circle style=filled]
+	p18 [label="in: ПРОВЕРКА В МИДДЛ\nout: ВОЗВРАТ КЛИЕНТУ,ОТПРАВЛЕНО В БАНК" fillcolor=lightgreen shape=circle style=filled]
+	p19 [label="in: ВОЗВРАТ КЛИЕНТУ\nout: КРЕДИТ ОДОБРЕН,ПРИНЯТО В РАБОТУ ЦОПП" fillcolor=lightgreen shape=circle style=filled]
+	p20 [label="in: ПРИНЯТО В РАБОТУ ЦОПП\nout: ВОЗВРАТ НА ДОРАБОТКУ,ОТПРАВЛЕНО В МИДДЛ" fillcolor=lightgreen shape=circle style=filled]
+	p21 [label="in: ВОЗВРАТ КЛИЕНТУ,ВОЗВРАТ НА ДОРАБОТКУ\nout: ЧЕРНОВИК" fillcolor=lightgreen shape=circle style=filled]
+	p0 -> "ОТКАЗ КЛИЕНТА"
+	p0 -> "ОТПРАВЛЕНО В МИДДЛ"
+	"КРЕДИТНЫЙ АНАЛИЗ" -> p0
+	p1 -> "КРЕДИТ ОДОБРЕН"
+	"ВОЗВРАТ КЛИЕНТУ" -> p1
+	"ВОЗВРАТ НА ДОРАБОТКУ" -> p1
+	p2 -> "ОТПРАВЛЕНО В БАНК"
+	"ПРОВЕРКА В МИДДЛ" -> p2
+	"КРЕДИТНЫЙ АНАЛИЗ" -> p2
+	p3 -> "ОТКАЗ БАНКА ПО ЗАЕМЩИКУ"
+	p3 -> "ВОЗВРАТ НА ДОРАБОТКУ"
+	"ПРИНЯТО В РАБОТУ ЦОПП" -> p3
+	p4 -> "ОТПРАВЛЕНО В БАНК"
+	"ПРОВЕРКА В МИДДЛ" -> p4
+	"ВОЗВРАТ НА ДОРАБОТКУ" -> p4
+	p5 -> "ОТПРАВЛЕНО В МИДДЛ"
+	"ЧЕРНОВИК" -> p5
+	p6 -> "ОТПРАВЛЕНО В МИДДЛ"
+	p6 -> "ВОЗВРАТ НА ДОРАБОТКУ"
+	"КРЕДИТНЫЙ АНАЛИЗ" -> p6
+	p7 -> "ОТПРАВЛЕНО В МИДДЛ"
+	"ПРИНЯТО В РАБОТУ ЦОПП" -> p7
+	"КРЕДИТ ОДОБРЕН" -> p7
+	p8 -> "ОТКАЗ КЛИЕНТА"
+	p8 -> "ОТПРАВЛЕНО В МИДДЛ"
+	"ПРИНЯТО В РАБОТУ ЦОПП" -> p8
+	p9 -> "ОТПРАВЛЕНО В МИДДЛ"
+	"ОТКАЗ БАНКА ПО ЗАЕМЩИКУ" -> p9
+	"КРЕДИТ ОДОБРЕН" -> p9
+	p10 -> "ОТКАЗ БАНКА ПО ЗАЕМЩИКУ"
+	p10 -> "КРЕДИТ ОДОБРЕН"
+	"ВОЗВРАТ КЛИЕНТУ" -> p10
+	p11 -> "ОТКАЗ КЛИЕНТА"
+	p11 -> "ОТКАЗ БАНКА ПО ЗАЕМЩИКУ"
+	"ПРИНЯТО В РАБОТУ ЦОПП" -> p11
+	p12 -> "КРЕДИТНЫЙ АНАЛИЗ"
+	"ВОЗВРАТ КЛИЕНТУ" -> p12
+	p13 -> "ОТКАЗ КЛИЕНТА"
+	p13 -> "ОТКАЗ БАНКА ПО ЗАЕМЩИКУ"
+	p13 -> "КРЕДИТ ОДОБРЕН"
+	"КРЕДИТНЫЙ АНАЛИЗ" -> p13
+	p14 -> "КРЕДИТНЫЙ АНАЛИЗ"
+	"ПРИНЯТО В РАБОТУ ЦОПП" -> p14
+	p15 -> "ЧЕРНОВИК"
+	p15 -> "ОТКАЗ КЛИЕНТА"
+	"КРЕДИТНЫЙ АНАЛИЗ" -> p15
+	p16 -> "ОТКАЗ БАНКА ПО ЗАЕМЩИКУ"
+	p16 -> "ВОЗВРАТ НА ДОРАБОТКУ"
+	"КРЕДИТНЫЙ АНАЛИЗ" -> p16
+	p17 -> "Назначена на вторую линию"
+	p17 -> "ОТПРАВЛЕНО В МИДДЛ"
+	"КРЕДИТ ОДОБРЕН" -> p17
+	p18 -> "ОТПРАВЛЕНО В БАНК"
+	p18 -> "ВОЗВРАТ КЛИЕНТУ"
+	"ПРОВЕРКА В МИДДЛ" -> p18
+	p19 -> "ПРИНЯТО В РАБОТУ ЦОПП"
+	p19 -> "КРЕДИТ ОДОБРЕН"
+	"ВОЗВРАТ КЛИЕНТУ" -> p19
+	p20 -> "ОТПРАВЛЕНО В МИДДЛ"
+	p20 -> "ВОЗВРАТ НА ДОРАБОТКУ"
+	"ПРИНЯТО В РАБОТУ ЦОПП" -> p20
+	p21 -> "ЧЕРНОВИК"
+	"ВОЗВРАТ КЛИЕНТУ" -> p21
+	"ВОЗВРАТ НА ДОРАБОТКУ" -> p21
+	size=40
+}
